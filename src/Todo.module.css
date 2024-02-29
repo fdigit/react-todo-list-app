@@ -1,0 +1,41 @@
+/* Todo.module.css */
+.container {
+    max-width: 400px;
+    margin: 0 auto;
+  }
+  
+  .todo {
+    display: flex;
+    justify-content: space-between;
+    margin: 8px 0;
+    padding: 8px;
+    border: 1px solid #ccc;
+  }
+  
+  .todo button {
+    margin-left: 8px;
+  }
+  
+  .header {
+    text-align: center;
+    margin-bottom: 16px;
+  }
+  
+  .input {
+    margin-bottom: 16px; /* Increased margin for spacing */
+  }
+  
+  .button {
+    margin-left: 8px;
+  }
+  
+  .modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: white;
+    padding: 16px;
+    border: 1px solid #ccc;
+  }
+  
