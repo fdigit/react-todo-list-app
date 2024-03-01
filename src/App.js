@@ -1,5 +1,5 @@
 // App.js
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Header from './Header';
 import Input from './Input';
 import Button from './Button';
@@ -11,6 +11,19 @@ const App = () => {
   const [todos, setTodos] = useState([]);
   const [newTodo, setNewTodo] = useState('');
   const [isModalOpen, setIsModalOpen] = useState(false);
+
+  // Load Todos from Local Storage
+  useEffect(() => {
+    const storedTodos = JSON.parse(localStorage.getItem('todos'));
+    if (storedTodos) {
+      setTodos(storedTodos);
+    }
+  }, []);
+
+  // Save Todos to Local Storage
+  useEffect(() => {
+    localStorage.setItem('todos', JSON.stringify(todos));
+  }, [todos]);
 
   const addTodo = () => {
     if (newTodo.trim()) {
